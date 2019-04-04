@@ -1,0 +1,108 @@
+#panel{
+position: fixed;
+top: 0;
+left:0;
+height: 4%;
+width: 100%;
+background: #1e88e5;
+padding-bottom: .3%;
+padding-top: .5%;
+display: inline-flex;
+}
+body{
+text-align: center;
+margin: 20px;
+}
+#panel *{
+text-align: left;
+margin-right: 10px;
+}
+#panel .fav{
+    height: 100%;
+}
+#name{
+text-align: right !important;
+}
+b,p,h1,h2,h3,h4,h5, button{
+color: #fff;
+font-family: 'Roboto', sans-serif;
+}
+#mm{
+border-radius:40px;
+background: #1e88e5;
+}
+#gameList{
+border-radius:40px;
+background: #005cb2;
+display: inline-flex;
+}
+.game{
+    background: #fff;
+    border-radius:40px;
+    margin: 10px;
+}
+.game *{
+    color: #000;
+}
+.game img{
+    height: 200px;
+}
+.game p{
+text-align: center;
+}
+.game b{
+ text-align: center;
+ display: block;
+}
+img{
+border-radius: 40px;
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+button{
+    border-radius: 10px;
+    background: #005cb2;
+    border:0;
+    padding: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    transition: 0.1s ease;
+}
+button:hover{
+background: #6ab7ff;
+box-shadow: 0 0 4px rgba(0,0,0,0.5);
+transition: 0.1s ease;
+}
+div{
+ box-shadow: 0 0 10px rgba(0,0,0,0.5);   
+}
+.game:hover{
+background: #dddddd;
+transition: 0.4s ease;
+}
+button, div, img, b,p,h1,h2,h3,h4,h5{
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-drag: none; 
+        user-select: none;
+        -webkit-user-drag: none;
+}
+.form{
+    position: fixed;
+    top: 0;
+    left:0;
+    background: #1e88e5;
+    border-radius: 40px;
+    margin: 15%;
+    padding: 1%;
+    transition: 0.4s ease;
+}
+input{
+background: #005cb2;
+border:0;
+border-radius: 10px;
+color: #fff;
+}
+.hide{
+    display: none;
+}

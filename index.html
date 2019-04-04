@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head prefix="og: https://ogp.me/ns#">
+    <title>GameME</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Play online games with your friends, what made by SimaKyr.">
+    <meta name="keywords" content="online, html5, games, io games, simakyr">
+    <meta name="author" content="SimaKyr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <meta property="og:locale" content="en_EN">
+    <meta property="og:title" content="GameME by SimaKyr">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://simakyr.github.io/gameME/">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:description" content="Play online games with your friends, what made by SimaKyr.">
+    
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png"/>
+    
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#1e88e5">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#1e88e5">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1e88e5">
+    
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
+	
+    <script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyDnS0sAQ23PL2_Slys6mgRlzJHUGb-7WTU",
+		authDomain: "drawme-9.firebaseapp.com",
+		databaseURL: "https://drawme-9.firebaseio.com",
+		projectId: "drawme-9",
+		storageBucket: "drawme-9.appspot.com",
+		messagingSenderId: "944726631004"
+	  };
+	  firebase.initializeApp(config);
+	  function set(key,value){firebase.database().ref().child(key).set(value);}
+	  firebase.database().ref().on('value', snap => get = snap.val());
+	</script>
+    </head>
+    
+    <body>
+    <div id="panel">
+    <img src="favicon.png" class="fav">
+    
+    <button id="lb">Login</button>
+    <button id="rb">Register</button>
+    <button id="ob" class="hide">Log out</button>
+    <b id="name" class="hide"></b>
+    </div>
+    <br>
+    <div id="mm">
+    <h1>Play online games what made by SimaKyr!<br>There games support multiplayer</h1>
+    <div id="gameList">
+    
+    <div class="game">
+    <img src="img/game1.png">
+    <br>
+    <br>
+    <b>GameME</b>
+    <p>GameME - draw with you friends.</p>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div id="login" class="form">
+    <h3>Login<h3>
+    <p>Email:</p>
+    <input class="emailI" type="email" autocomplete="on">
+    <p>Password:</p>
+    <input type="password" class="passI" autocomplete="on">
+    <button id="logBtn">Login</button>
+    </div>
+    
+    <div id="register" class="form">
+    <h3>Register<h3>
+    <p>Nickname(do not use real name):</p>
+    <input class="nI" type="username" autocomplete="on">
+    <p>Email:</p>
+    <input type="email" class="emailI" autocomplete="on">
+    <p>Password:</p>
+    <input class="passI" type="password" autocomplete="on"><br>
+    <button id="regBtn">Register</button>
+    </div>
+    <script src="gameme.js"></script>
+    </body>
+</html>
