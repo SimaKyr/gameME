@@ -102,7 +102,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 if (firebase.auth().currentUser !== null){
     
     setTimeout(function(){if(nI[0].value != ""){if(findNickname(nI[0].value)){
-        set('users/' + firebase.auth().currentUser.uid + '/nickname',findNickname(nI[0]));
+        set('users/' + firebase.auth().currentUser.uid + '/nickname',nI[0].value);
 
         set('users/' +'guid' + '/length', (Number(get['users']['guid'].length) + 1).toString());
         set('users/guid/' + get['users']['guid'].length,firebase.auth().currentUser.uid);
@@ -116,7 +116,7 @@ if (firebase.auth().currentUser !== null){
     nameD.className = '';
     
     game[0].onclick = function(){
-        window.open("https://simakyr.github.io/drawMe/","_self")
+        window.open("https://simakyr.github.io/drawMe/","_self");
     }
 }else{
     game[0].onclick = function(){
