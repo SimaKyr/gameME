@@ -59,8 +59,17 @@ logBtn.onclick = function(){
     }
 }
 
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
 regBtn.onclick = function(){
     if(findNickname(nI[0].value)){
+        if(Boolean(!JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/credits')).credits==0) === Boolean(!JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/verify/' + emailI[1])))){
     if( !emailI[1].validity.valid ){
         alert('Valid email!');
     }else{
@@ -69,6 +78,8 @@ regBtn.onclick = function(){
         }else{
             firebase.auth().createUserWithEmailAndPassword(emailI[1].value, passI[1].value).catch(function(error) {});
         }
+    }}else{
+        alert('This email is a fake!')
     }
 }else{
     alert('This nickname already contains in system!');
