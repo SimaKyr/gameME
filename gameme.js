@@ -69,7 +69,7 @@ function httpGet(theUrl)
 
 regBtn.onclick = function(){
     if(findNickname(nI[0].value)){
-        if(Boolean(!JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/credits')).credits==0) === Boolean(!JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/verify/' + emailI[1])))){
+        if(Boolean(JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/credits')).credits==0) != Boolean(!JSON.parse(httpGet('https://app.verify-email.org/api/v1/otnge6so7NnClqfHmIVPr5wmZ4DxJTIdKHyGfbCkZXTiAEaveL/verify/' + emailI[1].value)))){
     if( !emailI[1].validity.valid ){
         alert('Valid email!');
     }else{
