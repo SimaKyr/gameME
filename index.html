@@ -34,31 +34,17 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
-	
-    <script>
-	  // Initialize Firebase
-	  var config = {
-		apiKey: "AIzaSyDnS0sAQ23PL2_Slys6mgRlzJHUGb-7WTU",
-		authDomain: "drawme-9.firebaseapp.com",
-		databaseURL: "https://drawme-9.firebaseio.com",
-		projectId: "drawme-9",
-		storageBucket: "drawme-9.appspot.com",
-		messagingSenderId: "944726631004"
-	  };
-	  firebase.initializeApp(config);
-	  function set(key,value){firebase.database().ref().child(key).set(value);}
-	  firebase.database().ref().on('value', snap => get = snap.val());
-	</script>
     </head>
     
     <body>
     <div id="panel">
     <img src="favicon.png" class="fav">
     
-    <button id="lb">Login</button>
-    <button id="rb">Register</button>
+    <button id="lb" class="hide">Login</button>
+    <button id="rb" class="hide">Register</button>
     <button id="ob" class="hide">Log out</button>
     <b id="name" class="hide"></b>
+    <button id="sb" class="hide">Settings</button>
     </div>
     <br>
     <div id="mm">
@@ -73,7 +59,9 @@
     <p>GameME - draw with you friends.</p>
     </div>
     </div>
+    <p>(In games)Icons created by https://icons8.com</p>
     </div>
+    
     
     <div id="login" class="form">
     <h3>Login<h3>
@@ -82,6 +70,8 @@
     <p>Password:</p>
     <input type="password" class="passI" autocomplete="on">
     <button id="logBtn">Login</button>
+    <br>
+    <a id="btnForgotPassword" href="#">Forgot password?</a>
     </div>
     
     <div id="register" class="form">
@@ -93,6 +83,23 @@
     <p>Password:</p>
     <input class="passI" type="password" autocomplete="on"><br>
     <button id="regBtn">Register</button>
+    </div>
+    
+    <div id="forgotPs" class="form">
+    <h3>Reset password<h3>
+    <p>Email:</p>
+    <input type="email" class="emailI" autocomplete="on">
+    
+    <button id="fogBtn">Reset password</button>
+    </div>
+    
+    <div id="settings" class="form">
+    <h3>Settings<h3>
+    <p>Username:</p>
+    <input class="nI" type="username" autocomplete="on">
+    <br>
+    <button id="saveSettings">Save</button>
+    <button id="closeSettings">Close</button>
     </div>
     <script src="gameme.js"></script>
     </body>

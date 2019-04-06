@@ -30,6 +30,7 @@ font-family: 'Roboto', sans-serif;
 #mm{
 border-radius:40px;
 background: #1e88e5;
+padding-bottom: 1%;
 }
 #gameList{
 border-radius:40px;
@@ -105,4 +106,10 @@ color: #fff;
 }
 .hide{
     display: none;
+}
+a{
+color: #fff;
+}
+a:hover{
+color: #ddd;
 }
