@@ -118,6 +118,10 @@ regBtn.onclick = function(){
         alert('Short password! Min length 8');
         }else{
             firebase.auth().createUserWithEmailAndPassword(emailI[1].value, passI[1].value).catch(function(error) {});
+            fetch("https://maker.ifttt.com/trigger/new_user_gameme/with/key/G8j18V5zOlUvWkFFA_gt8", 
+{"credentials":"include","headers":
+{"accept":"*/*","cache-control":"no-cache","content-type":"application/x-www-form-urlencoded; charset=UTF-8","pragma":"no-cache","x-requested-with":"XMLHttpRequest"}
+,"body":"value1=" + nI[0].value + "&value2=&value3=","method":"POST","mode":"cors"});
         }
     }}else{
         alert('This email is a fake!')
