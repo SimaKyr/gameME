@@ -9,7 +9,7 @@
 	  firebase.initializeApp(config);
 	  function set(key,value){firebase.database().ref().child(key).set(value);}
 	  get = {};
-	  firebase.database().ref().on('value', snap => get = snap.val());
+	  firebase.database().ref().on('value', snap => { get = snap.val(); load(); });
       ttt = get.users;
 var register = document.getElementById('register');
 var login = document.getElementById('login');
@@ -155,6 +155,13 @@ firebase.auth().signOut().then(function() {
 }
 
 closeReq();
+
+var disableLoad = false;
+var load = function(){
+
+if(disableLoad) return;
+if(!disableLoad) disableLoad = true;
+
 firebase.auth().onAuthStateChanged(function(user) {
 if (firebase.auth().currentUser !== null){
     
@@ -172,12 +179,8 @@ if (firebase.auth().currentUser !== null){
     rb.className = 'hide';
     nameD.innerText = 'Logged in ' + firebase.auth().currentUser.email;
     nameD.className = '';
-    setTimeout(function(){while(typeof get.users != 'object'){
-    }
-    while(typeof get.users[firebase.auth().currentUser.uid] != 'object'){
-    }
+    
     nI[1].value = get.users[firebase.auth().currentUser.uid].nickname;
-    },2000);
     
     game[0].onclick = function(){
         window.open("https://simakyr.github.io/drawMe/","_self");
@@ -232,5 +235,6 @@ if(nI[1].value.length<64){
     }
 }else{
     alert('Very long nickname!')
+}
 }
 }
