@@ -49,7 +49,7 @@ display: inline-flex;
     height: 200px;
 }
 .game p{
-text-align: center;
+ text-align: center;
 }
 .game b{
  text-align: center;
@@ -112,4 +112,52 @@ color: #fff;
 }
 a:hover{
 color: #ddd;
+}
+@media only screen and (max-device-width: 768px) {
+.form{
+    height:100%;
+    width: calc(100% - 7px);
+    top: 58px;
+    left:0px;
+    margin:0;
+}
+.form input{
+    width: 80%;
+    height: 24px;
+    font-size: 20px;
+}
+
+.form button{
+    margin-top: 10px;
+}
+#panel{
+    height: 48px;
+}
+#panel b{
+    text-align: center;
+}
+button{
+padding: 15px;
+font-size: 18px;
+}
+#mm{
+width:100%;
+height: 100%;
+padding:0;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+body{
+    margin-top: 20px !important;
+}
+body, html{
+margin: 0;
+padding:0;
+}
+
+.game{
+    margin:0;
+}
 }
